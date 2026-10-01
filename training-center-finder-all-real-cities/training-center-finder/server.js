@@ -1219,84 +1219,49 @@ app.get("/", async (req, res) => {
 ========================================================= */
 
 app.get("/search", async (req, res) => {
-
   try {
-
-    const q = (req.query.q || "").trim();
     const city = (req.query.city || "").trim();
-    const category = (req.query.category || "").trim();
 
-    const params = [];
-    const where = [];
+    let result;
 
-    if (q) {
-
-      params.push("%" + q + "%");
-
-      where.push(`
-        (
-          c.name ILIKE $${params.length}
-          OR c.city ILIKE $${params.length}
-          OR c.address ILIKE $${params.length}
-          OR co.name ILIKE $${params.length}
-        )
+    if (city) {
+      result = await pool.query(
+        `
+        SELECT *
+        FROM centers
+        WHERE LOWER(city) = LOWER($1)
+        ORDER BY name
+        `,
+        [city]
+      );
+    } else {
+      result = await pool.query(`
+        SELECT *
+        FROM centers
+        ORDER BY city, name
       `);
     }
 
-    if (city) {
-
-      params.push("%" + city + "%");
-
-      where.push(
-        `c.city ILIKE $${params.length}`
-      );
-    }
-
-    if (category) {
-
-      params.push(category);
-
-      where.push(
-        `co.category = $${params.length}`
-      );
-    }
-
-    const sql = `
-      SELECT DISTINCT c.*
-      FROM centers c
-      LEFT JOIN courses co
-        ON co.center_id = c.id
-      ${
-        where.length
-          ? "WHERE " + where.join(" AND ")
-          : ""
-      }
-      ORDER BY c.city, c.name
-    `;
-
-    const result = await pool.query(
-      sql,
-      params
-    );
+    const cities = await pool.query(`
+      SELECT DISTINCT city
+      FROM centers
+      ORDER BY city
+    `);
 
     res.render("search", {
       centers: result.rows,
-      q,
       city,
-      category
+      cities: cities.rows.map(row => row.city)
     });
 
   } catch (error) {
-
     console.error(error);
 
     res.status(500).render("error", {
-      message: "Search failed"
+      message: "Unable to search training centers"
     });
   }
 });
-
-
 /* =========================================================
    CENTER DETAILS
 ========================================================= */
