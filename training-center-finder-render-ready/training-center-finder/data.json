@@ -1838,4 +1838,42 @@
       "Web Technologies"
     ]
   }
+  {
+  "id": 75,
+  "name": "Agasthya Solutions",
+  "city": "Kakinada",
+  "address": "1st Floor, Nilayam, 2-34-14, Srinaga, Chinthavari Street, opposite Mamatha Diagnostic Centre, Perrajupeta, Kakinada, Andhra Pradesh 533003",
+  "description": "Agasthya Solutions is an IT training and skill development institute in Kakinada offering practical technology and professional training.",
+  "phone": "+918019465669",
+  "email": null,
+  "website": "https://www.agasthyasolutions.com/",
+  "rating": 0,
+  "reviews": 0,
+  "fee_range": "Contact institute",
+  "image_url": "https://placehold.co/900x560?text=Agasthya+Solutions",
+  "latitude": 16.9891,
+  "longitude": 82.2475,
+  "facilities": [
+    "Classroom Training",
+    "Practical Training",
+    "Course Guidance",
+    "Placement Assistance"
+  ],
+  "courses": [
+    "AWS",
+    "DevOps",
+    "Cloud Computing",
+    "Linux",
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "Jenkins",
+    "Git",
+    "Python",
+    "Cyber Security",
+    "Data Analytics",
+    "Data Science",
+    "Java"
+  ]
+}
 ]
