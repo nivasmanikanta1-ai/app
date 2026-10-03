@@ -1,0 +1,9 @@
+<%- include('partials-head',{title:'Login'}) %>
+<section class="auth"><div class="auth-card"><span class="eyebrow">WELCOME BACK</span><h1>Sign in</h1>
+<% if(error){ %><div class="alert"><%= error %></div><% } %>
+<form method="post" action="/login"><input type="hidden" name="next" value="<%= next %>">
+<label>Email<input type="email" name="email" required></label>
+<label>Password<input type="password" name="password" required></label>
+<button class="button full">Sign in</button></form>
+<p>New here? <a href="/register">Create an account</a></p></div></section>
+<%- include('partials-foot') %>

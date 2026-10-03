@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= title %> | Training Center Finder</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">Training Center Finder</a>
+  <nav>
+    <a href="/search">Search</a>
+    <% if(user){ %>
+      <a href="/favorites">Favorites</a>
+      <form action="/logout" method="post" class="inline"><button class="link-btn">Logout</button></form>
+    <% } else { %>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    <% } %>
+  </nav>
+</header>
+<main class="container">

@@ -1,0 +1,1841 @@
+[
+  {
+    "id": 1,
+    "name": "iSAN Computers Education",
+    "city": "Kakinada",
+    "address": "D.No: 2-161/1, 2nd Floor, Thadala Complex, Bhanugudi Junction, Kakinada, Andhra Pradesh 533003",
+    "description": "iSAN Computers Education is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+918978989444",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Python",
+      "Java",
+      "C",
+      "Artificial Intelligence",
+      "Data Science",
+      "Java Full Stack",
+      "AutoCAD",
+      "Tally"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "KTS",
+    "city": "Kakinada",
+    "address": "RTC Complex Road, Bhanugudi Junction, Perrajupeta, Kakinada, Andhra Pradesh 533003",
+    "description": "KTS is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+919553084240",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Tech Veracity",
+    "city": "Kakinada",
+    "address": "2nd Floor, Sangeeth Sagar Complex, D.No: 12-5-1, opposite Titan Show Room, beside KFC, Kakinada, Andhra Pradesh 533001",
+    "description": "Tech Veracity is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+917989872486",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Full Stack Development",
+      "Software Training"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "SRI BABU COMPUTER TRAINING INSTITUTE",
+    "city": "Kakinada",
+    "address": "Indrapalem Bridge, beside Friends Net and Net Centre, Indrapalem, Kakinada, Andhra Pradesh 533006",
+    "description": "SRI BABU COMPUTER TRAINING INSTITUTE is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+916303454062",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "SAP FICO",
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Data Lineage",
+    "city": "Kakinada",
+    "address": "1st Floor, above Shanvi Diagnostic Centre, beside Bhanu Multi Speciality Hospital, G O Colony, Kakinada, Andhra Pradesh 533003",
+    "description": "Data Lineage is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+917989940140",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "AWS",
+      "Python",
+      "MySQL",
+      "PySpark"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Learntact Learning Center",
+    "city": "Kakinada",
+    "address": "1st Floor, Subhamasthu Showroom, D.No: 20-11-40, Majestic Street, Suryanarayana Puram, Kakinada, Andhra Pradesh 533001",
+    "description": "Learntact Learning Center is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+916303114238",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "MS Office",
+      "CAD"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "BDPS COMPUTER EDUCATION",
+    "city": "Kakinada",
+    "address": "First Floor, Sai Prameela Apartments, Nagamallithota Junction, Ramanayyapeta, Kakinada, Andhra Pradesh 533003",
+    "description": "BDPS COMPUTER EDUCATION is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+918142668889",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Training",
+      "Tally"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Cad Desk Kakinada",
+    "city": "Kakinada",
+    "address": "D No: 2-43-3, 3rd Floor, Bhaskar Nagar, Ramanayyapeta, Kakinada, Andhra Pradesh 533003",
+    "description": "Cad Desk Kakinada is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+917378123123",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "CAD Training"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "SICE Computer Education",
+    "city": "Kakinada",
+    "address": "214, National Highway, G O Colony, Kakinada, Andhra Pradesh 533003",
+    "description": "SICE Computer Education is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+919912300248",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "5XFUTURE Software Training Institute",
+    "city": "Kakinada",
+    "address": "68-10-35, Vidhyuth Nagar, SBI Officers Colony, Ramanayyapeta, Kakinada, Andhra Pradesh 533003",
+    "description": "5XFUTURE Software Training Institute is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+919640313555",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Python",
+      "Java",
+      "Full Stack Development",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Data Science",
+      "Cybersecurity"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "KAKINADA INSTITUTE OF SOFTWARE & HARDWARE",
+    "city": "Kakinada",
+    "address": "1-13-6, Bhanugudi Junction, Srinagar, Kakinada, Andhra Pradesh 533001",
+    "description": "KAKINADA INSTITUTE OF SOFTWARE & HARDWARE is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+919948552767",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Hardware Training"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Tici Computer Education",
+    "city": "Kakinada",
+    "address": "Tharesh Infotech, Lachiraju Gari Street, Surya Rao Peta, Kakinada, Andhra Pradesh 533001",
+    "description": "Tici Computer Education is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+917032126609",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "NIIT - Ramaraopet",
+    "city": "Kakinada",
+    "address": "Ramaraopet, Kakinada, Andhra Pradesh",
+    "description": "NIIT - Ramaraopet is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842374929",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      ".NET Technology",
+      "Animation Multimedia",
+      "C",
+      "C++",
+      "CCNA"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "NIIT - Srinagar",
+    "city": "Kakinada",
+    "address": "Srinagar, Kakinada, Andhra Pradesh",
+    "description": "NIIT - Srinagar is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842353556",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Education"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Primesoft",
+    "city": "Kakinada",
+    "address": "Nagamallithota Junction, Kakinada, Andhra Pradesh",
+    "description": "Primesoft is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842343532",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Java"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Aptech Education",
+    "city": "Kakinada",
+    "address": "Bhanugudi, Kakinada, Andhra Pradesh",
+    "description": "Aptech Education is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      ".NET Technology",
+      "Animation & Multimedia",
+      "Dot Net"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Indian Institute",
+    "city": "Kakinada",
+    "address": "Bhanugudi Junction, Kakinada, Andhra Pradesh",
+    "description": "Indian Institute is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842367111",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "SAP",
+      "SAS"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Pace Computer Education",
+    "city": "Kakinada",
+    "address": "Srinagar, Kakinada, Andhra Pradesh",
+    "description": "Pace Computer Education is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842367985",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "J2EE",
+      "Java",
+      "SAP"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Silicon Info Systems",
+    "city": "Kakinada",
+    "address": "Temple Street, Kakinada, Andhra Pradesh",
+    "description": "Silicon Info Systems is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08846598871",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "J2EE",
+      "Java",
+      ".NET Technology",
+      "SAP"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Arcsoft Animation",
+    "city": "Kakinada",
+    "address": "Nagamallithota Junction, Kakinada, Andhra Pradesh",
+    "description": "Arcsoft Animation is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842347279",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Animation Multimedia"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Ardha Technologies",
+    "city": "Kakinada",
+    "address": "Bhanugudi Junction, Kakinada, Andhra Pradesh",
+    "description": "Ardha Technologies is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842348972",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "SAP",
+      "Tally"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Sashi Infotech",
+    "city": "Kakinada",
+    "address": "Sarpavaram, Kakinada, Andhra Pradesh",
+    "description": "Sashi Infotech is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842353030",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Animation Multimedia",
+      "Dot Net",
+      "J2EE",
+      ".NET Technology"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Informatic Computer Institute",
+    "city": "Kakinada",
+    "address": "Suryaraopeta, Kakinada, Andhra Pradesh",
+    "description": "Informatic Computer Institute is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842360614",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Dot Net",
+      "J2EE",
+      "Java",
+      "PHP"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Government Industrial Training Institute",
+    "city": "Kakinada",
+    "address": "Opposite Engineering College, Pithapuram Road, Kakinada, Andhra Pradesh 533003",
+    "description": "Government Industrial Training Institute is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842348182",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "COPA",
+      "Draughtsman Civil",
+      "Electrician",
+      "Electronics Mechanic",
+      "Fitter",
+      "Machinist",
+      "Motor Vehicle Mechanic",
+      "Refrigeration and Air Conditioning",
+      "Welder"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Sri Siddhartha Industrial Training Centre",
+    "city": "Kakinada",
+    "address": "Jaganickpur, Kakinada, Andhra Pradesh 533002",
+    "description": "Sri Siddhartha Industrial Training Centre is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "9292658702",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Electrician",
+      "Fitter"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Vijaya Industrial Training Centre",
+    "city": "Kakinada",
+    "address": "D.No. Vakalapudi, Opposite Surya Mahal, Kakinada, Andhra Pradesh 533001",
+    "description": "Vijaya Industrial Training Centre is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "9989143189",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Electrician",
+      "Electronics Mechanic",
+      "Fitter",
+      "Sewing Technology",
+      "Stenographer"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Minerva Industrial Training Centre",
+    "city": "Kakinada",
+    "address": "Kakinada District, Andhra Pradesh",
+    "description": "Minerva Industrial Training Centre is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Noble Industrial Training Centre",
+    "city": "Kakinada",
+    "address": "Kakinada District, Andhra Pradesh",
+    "description": "Noble Industrial Training Centre is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "SREE Private ITI",
+    "city": "Kakinada",
+    "address": "Kakinada District, Andhra Pradesh",
+    "description": "SREE Private ITI is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Sri Bhimeshwara Private ITI",
+    "city": "Kakinada",
+    "address": "Kakinada District, Andhra Pradesh",
+    "description": "Sri Bhimeshwara Private ITI is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Sri Lakshminarayana Private ITI",
+    "city": "Kakinada",
+    "address": "Kakinada District, Andhra Pradesh",
+    "description": "Sri Lakshminarayana Private ITI is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Sri Raja Rajeswari Industrial Training Centre",
+    "city": "Kakinada",
+    "address": "Kakinada District, Andhra Pradesh",
+    "description": "Sri Raja Rajeswari Industrial Training Centre is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Sri Venkateswara Industrial Training Centre",
+    "city": "Kakinada",
+    "address": "Kakinada District, Andhra Pradesh",
+    "description": "Sri Venkateswara Industrial Training Centre is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Vikasa Kakinada",
+    "city": "Kakinada",
+    "address": "Collectorate, Kakinada District, Andhra Pradesh",
+    "description": "Vikasa Kakinada is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "08842352765",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Apprenticeship Training",
+      "National Apprenticeship Training",
+      "Service Technician",
+      "Multi Skill Technician"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Impulse Software",
+    "city": "Visakhapatnam",
+    "address": "Divya Shakthi Apartment, near FoodEx, North Extension, Balayya Sastri Layout, Seethammadara, Visakhapatnam, Andhra Pradesh 530013",
+    "description": "Impulse Software is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": "+919247175823",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Programming"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Srikanth Technologies",
+    "city": "Visakhapatnam",
+    "address": "304, Dwarakanagar Road, beside State Bank of India, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+    "description": "Srikanth Technologies is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": "+918912541948",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Programming"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Aeries Soft Tech Solutions",
+    "city": "Visakhapatnam",
+    "address": "205, beside Helapuri, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+    "description": "Aeries Soft Tech Solutions is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": "+919142271111",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Hackersdemy Institute",
+    "city": "Visakhapatnam",
+    "address": "MVP Colony Sector 12, Visakhapatnam, Andhra Pradesh",
+    "description": "Hackersdemy Institute is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Kali Linux",
+      "Cybersecurity"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "SVR Technologies",
+    "city": "Visakhapatnam",
+    "address": "Dwaraka Nagar, Visakhapatnam, Andhra Pradesh",
+    "description": "SVR Technologies is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Artificial Intelligence"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "IT Knowlez",
+    "city": "Visakhapatnam",
+    "address": "47-9-36/2, 1st Floor, Mehar Plaza, 3rd Lane, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+    "description": "IT Knowlez is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Comp U Learn",
+    "city": "Visakhapatnam",
+    "address": "Flat No 402, 3rd Floor, Eswar Plaza, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+    "description": "Comp U Learn is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Edit Multimedia Centre",
+    "city": "Visakhapatnam",
+    "address": "24 & 25 Arunodaya Complex, 1st Lane, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+    "description": "Edit Multimedia Centre is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Multimedia",
+      "Graphic Design"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Aptech Computer Education",
+    "city": "Visakhapatnam",
+    "address": "House No: 58-1-293, opposite Amar Concept School, NAD Kotha Road, Visakhapatnam, Andhra Pradesh 530027",
+    "description": "Aptech Computer Education is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Education"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "TalentSprint Visakhapatnam",
+    "city": "Visakhapatnam",
+    "address": "2nd Floor, Pavan Towers, opposite Hotel Budhil Park, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+    "description": "TalentSprint Visakhapatnam is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Varun Technologies",
+    "city": "Visakhapatnam",
+    "address": "Duvvada Station Road, Kurmannapalem, Visakhapatnam, Andhra Pradesh 530046",
+    "description": "Varun Technologies is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Origin Engineering Academy",
+    "city": "Visakhapatnam",
+    "address": "2nd Floor, Main Road, Gopalapatnam, Visakhapatnam, Andhra Pradesh 530027",
+    "description": "Origin Engineering Academy is a training centre in Visakhapatnam offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.6868,
+    "longitude": 83.2185,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Engineering Training"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "DURGA SOFTWARE SOLUTIONS",
+    "city": "Hyderabad",
+    "address": "Plot No. 202, II Floor, HUDA Maitrivanam, Ameerpet, Hyderabad, Telangana 500082",
+    "description": "DURGA SOFTWARE SOLUTIONS is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Java",
+      "J2EE",
+      ".NET",
+      "Oracle",
+      "C Language",
+      "Big Data"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "QEdge Technologies",
+    "city": "Hyderabad",
+    "address": "2nd Floor, Nagasuri Plaza, Ameerpet, Hyderabad, Telangana 500082",
+    "description": "QEdge Technologies is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Testing",
+      "Java",
+      ".NET",
+      "Mobile Applications",
+      "Big Data",
+      "Salesforce"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "SV Infotech",
+    "city": "Hyderabad",
+    "address": "Madhapur, Hyderabad, Telangana",
+    "description": "SV Infotech is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Training",
+      "Software Training"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Softcore Technologies",
+    "city": "Hyderabad",
+    "address": "KPHB Colony, Hyderabad, Telangana",
+    "description": "Softcore Technologies is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "SAP Training",
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "AIIT Computer Education",
+    "city": "Hyderabad",
+    "address": "Near LB Nagar Bus Stop, LB Nagar, Hyderabad, Telangana",
+    "description": "AIIT Computer Education is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Training",
+      "Hardware Training"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Naarayana Technologies",
+    "city": "Hyderabad",
+    "address": "Prashanth Complex, Dilsukh Nagar, Hyderabad, Telangana",
+    "description": "Naarayana Technologies is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Computer Training",
+      "Software Training"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Cadcenterhyderabad",
+    "city": "Hyderabad",
+    "address": "Ameerpet, Hyderabad, Telangana",
+    "description": "Cadcenterhyderabad is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "CAD Training",
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Mentors",
+    "city": "Hyderabad",
+    "address": "Himayat Nagar, Hyderabad, Telangana",
+    "description": "Mentors is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Greatcoder Trainings",
+    "city": "Hyderabad",
+    "address": "Madhapur, Hyderabad, Telangana",
+    "description": "Greatcoder Trainings is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "BI2AI Technologies Training Institute",
+    "city": "Hyderabad",
+    "address": "Madhapur, Hyderabad, Telangana",
+    "description": "BI2AI Technologies Training Institute is a training centre in Hyderabad offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Power BI",
+      "SQL",
+      "Excel",
+      "Cybersecurity",
+      "Data Science",
+      "Artificial Intelligence",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "BEPEC",
+    "city": "Vijayawada",
+    "address": "Moghalrajpuram, Vijayawada, Andhra Pradesh",
+    "description": "BEPEC is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Data Science"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "VS Innovative Tech",
+    "city": "Vijayawada",
+    "address": "Labbipet, Vijayawada, Andhra Pradesh",
+    "description": "VS Innovative Tech is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "SAP Training",
+      "Software Training"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Zoom Technologies",
+    "city": "Vijayawada",
+    "address": "Patamata Lanka, Vijayawada, Andhra Pradesh",
+    "description": "Zoom Technologies is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Networking",
+      "Security"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Learnet Skills",
+    "city": "Vijayawada",
+    "address": "Auto Nagar, Vijayawada, Andhra Pradesh",
+    "description": "Learnet Skills is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Java"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Tally Digital Guru",
+    "city": "Vijayawada",
+    "address": "Bhavanipuram, Vijayawada, Andhra Pradesh",
+    "description": "Tally Digital Guru is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Tally",
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Sree Media Agency",
+    "city": "Vijayawada",
+    "address": "Benz Circle, Vijayawada, Andhra Pradesh",
+    "description": "Sree Media Agency is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Digital Marketing"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Topof Business Solutions",
+    "city": "Vijayawada",
+    "address": "Benz Circle, Vijayawada, Andhra Pradesh",
+    "description": "Topof Business Solutions is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Digital Marketing",
+      "Graphic Designing"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Ultimate Technologies",
+    "city": "Vijayawada",
+    "address": "Labbipet, Vijayawada, Andhra Pradesh",
+    "description": "Ultimate Technologies is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Java",
+      "Python",
+      "C",
+      "C++",
+      "Tally",
+      "SAP FICO",
+      "Digital Marketing",
+      "Selenium Testing"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Albright Technologies",
+    "city": "Vijayawada",
+    "address": "Patamata, Vijayawada, Andhra Pradesh",
+    "description": "Albright Technologies is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Hardware",
+      "Networking",
+      "CCNA",
+      "MCSA",
+      "Cloud Computing",
+      "Linux",
+      "Ethical Hacking"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Genesys",
+    "city": "Vijayawada",
+    "address": "Moghalrajpuram, Vijayawada, Andhra Pradesh",
+    "description": "Genesys is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "SAS",
+      "Software Training"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "VAWE Institutes Pvt Ltd",
+    "city": "Vijayawada",
+    "address": "Moghalrajpuram, Vijayawada, Andhra Pradesh",
+    "description": "VAWE Institutes Pvt Ltd is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Computer Training"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "TUXG Training",
+    "city": "Vijayawada",
+    "address": "Patamata Lanka, Vijayawada, Andhra Pradesh",
+    "description": "TUXG Training is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Linux",
+      "PHP",
+      "Software Training"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "DACE - Digital Academy of Computer Education",
+    "city": "Vijayawada",
+    "address": "Patamata, Vijayawada, Andhra Pradesh",
+    "description": "DACE - Digital Academy of Computer Education is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "3D Animation",
+      "Graphic Designing",
+      "Mobile Application Development"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "MAAC Animation Institutes",
+    "city": "Vijayawada",
+    "address": "Vijayawada, Andhra Pradesh",
+    "description": "MAAC Animation Institutes is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Animation",
+      "Multimedia"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Naresh I Technologies",
+    "city": "Vijayawada",
+    "address": "Patamata, Vijayawada, Andhra Pradesh 520010",
+    "description": "Naresh I Technologies is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Software Training",
+      "Python",
+      "Selenium"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "V Train U Institute",
+    "city": "Vijayawada",
+    "address": "V D Puram, Bharathi Teertha Nagar, Vijayawada, Andhra Pradesh",
+    "description": "V Train U Institute is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Full Stack Development",
+      "Python",
+      "Java",
+      "Web Designing",
+      "DevOps",
+      "Testing",
+      "SAP",
+      "Data Science"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Codegnan",
+    "city": "Vijayawada",
+    "address": "Moghalrajpuram, Vijayawada, Andhra Pradesh",
+    "description": "Codegnan is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Python",
+      "Data Science",
+      "Software Training"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Canter Technologies",
+    "city": "Vijayawada",
+    "address": "Benz Circle, Vijayawada, Andhra Pradesh",
+    "description": "Canter Technologies is a training centre in Vijayawada offering technology, computer or vocational training.",
+    "phone": null,
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.5062,
+    "longitude": 80.648,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "C",
+      "Python",
+      "Core Java",
+      "Advanced Java",
+      "Web Technologies"
+    ]
+  }
+]

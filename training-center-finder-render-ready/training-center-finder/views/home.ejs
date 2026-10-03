@@ -1,0 +1,32 @@
+<%- include('partials-head',{title:'Find Training Centers'}) %>
+<section class="hero">
+  <div>
+    <span class="eyebrow">LEARN · GROW · GET HIRED</span>
+    <h1>Find the right training center for your career.</h1>
+    <p>Search training institutes by city, course or category.</p>
+    <form action="/search" class="searchbox">
+      <input name="q" placeholder="Search course or training center">
+      <input name="city" placeholder="City e.g. Kakinada">
+      <button>Search</button>
+    </form>
+  </div>
+  <div class="hero-card">
+    <b><%= featured.length %>+</b><span>Featured centers</span>
+    <b>4</b><span>Cities covered</span>
+  </div>
+</section>
+<section class="section">
+<div class="section-head"><h2>Training centers</h2><a href="/search">View all →</a></div>
+<div class="grid">
+<% featured.forEach(c=>{ %>
+<article class="card">
+<img src="<%= c.image_url %>" alt="">
+<div class="card-body">
+<h3><a href="/center/<%= c.id %>"><%= c.name %></a></h3>
+<p class="muted">📍 <%= c.city %></p>
+<p><%= c.description %></p>
+<a class="outline" href="/center/<%= c.id %>">View details</a>
+</div></article>
+<% }) %>
+</div></section>
+<%- include('partials-foot') %>

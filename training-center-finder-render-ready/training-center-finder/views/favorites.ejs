@@ -1,0 +1,7 @@
+<%- include('partials-head',{title:'Favorites'}) %>
+<section class="page-head"><span class="eyebrow">SAVED</span><h1>Your favorites</h1></section>
+<div class="grid">
+<% centers.forEach(c=>{ %><article class="card"><div class="card-body"><h3><a href="/center/<%= c.id %>"><%= c.name %></a></h3><p>📍 <%= c.city %></p><p><%= c.address %></p></div></article><% }) %>
+<% if(!centers.length){ %><div class="empty"><h2>No saved centers</h2><p>Open a center and save it to see it here.</p></div><% } %>
+</div>
+<%- include('partials-foot') %>
