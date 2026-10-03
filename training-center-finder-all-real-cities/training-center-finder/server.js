@@ -197,6 +197,316 @@ const trainingCenters = [
       "Computer Training"
     ]
   },
+    // =====================================================
+  // ADDITIONAL KAKINADA TRAINING CENTERS
+  // =====================================================
+
+  {
+    name: "NIIT - Ramaraopet",
+    city: "Kakinada",
+    address: "Ramaraopet, Kakinada, Andhra Pradesh",
+    description: "Computer education and technology training centre.",
+    phone: "08842374929",
+    website: null,
+    courses: [
+      ".NET Technology",
+      "Animation Multimedia",
+      "C",
+      "C++",
+      "CCNA"
+    ]
+  },
+
+  {
+    name: "NIIT - Srinagar",
+    city: "Kakinada",
+    address: "Srinagar, Kakinada, Andhra Pradesh",
+    description: "Computer education and training centre.",
+    phone: "08842353556",
+    website: null,
+    courses: [
+      "Computer Education"
+    ]
+  },
+
+  {
+    name: "Primesoft",
+    city: "Kakinada",
+    address: "Nagamallithota Junction, Kakinada, Andhra Pradesh",
+    description: "Computer education and software training centre.",
+    phone: "08842343532",
+    website: null,
+    courses: [
+      "Java"
+    ]
+  },
+
+  {
+    name: "Aptech Education",
+    city: "Kakinada",
+    address: "Bhanugudi, Kakinada, Andhra Pradesh",
+    description: "Computer education and professional technology training centre.",
+    phone: null,
+    website: null,
+    courses: [
+      ".NET Technology",
+      "Animation & Multimedia",
+      "Dot Net"
+    ]
+  },
+
+  {
+    name: "Indian Institute",
+    city: "Kakinada",
+    address: "Bhanugudi Junction, Kakinada, Andhra Pradesh",
+    description: "Computer education and professional training centre.",
+    phone: "08842367111",
+    website: null,
+    courses: [
+      "SAP",
+      "SAS"
+    ]
+  },
+
+  {
+    name: "Pace Computer Education",
+    city: "Kakinada",
+    address: "Srinagar, Kakinada, Andhra Pradesh",
+    description: "Computer education and software training centre.",
+    phone: "08842367985",
+    website: null,
+    courses: [
+      "J2EE",
+      "Java",
+      "SAP"
+    ]
+  },
+
+  {
+    name: "Silicon Info Systems",
+    city: "Kakinada",
+    address: "Temple Street, Kakinada, Andhra Pradesh",
+    description: "Computer education and software training centre.",
+    phone: "08846598871",
+    website: null,
+    courses: [
+      "J2EE",
+      "Java",
+      ".NET Technology",
+      "SAP"
+    ]
+  },
+
+  {
+    name: "Arcsoft Animation",
+    city: "Kakinada",
+    address: "Nagamallithota Junction, Kakinada, Andhra Pradesh",
+    description: "Animation and multimedia training centre.",
+    phone: "08842347279",
+    website: null,
+    courses: [
+      "Animation Multimedia"
+    ]
+  },
+
+  {
+    name: "Ardha Technologies",
+    city: "Kakinada",
+    address: "Bhanugudi Junction, Kakinada, Andhra Pradesh",
+    description: "Technology training centre.",
+    phone: "08842348972",
+    website: null,
+    courses: [
+      "SAP",
+      "Tally"
+    ]
+  },
+
+  {
+    name: "Sashi Infotech",
+    city: "Kakinada",
+    address: "Sarpavaram, Kakinada, Andhra Pradesh",
+    description: "Computer education and software training centre.",
+    phone: "08842353030",
+    website: null,
+    courses: [
+      "Animation Multimedia",
+      "Dot Net",
+      "J2EE",
+      ".NET Technology"
+    ]
+  },
+
+  {
+    name: "Informatic Computer Institute",
+    city: "Kakinada",
+    address: "Suryaraopeta, Kakinada, Andhra Pradesh",
+    description: "Computer education and programming training centre.",
+    phone: "08842360614",
+    website: null,
+    courses: [
+      "Dot Net",
+      "J2EE",
+      "Java",
+      "PHP"
+    ]
+  },
+
+  {
+    name: "Government Industrial Training Institute",
+    city: "Kakinada",
+    address: "Opposite Engineering College, Pithapuram Road, Kakinada, Andhra Pradesh 533003",
+    description: "Government Industrial Training Institute providing vocational and technical training.",
+    phone: "08842348182",
+    website: "http://www.govtitikkd.com",
+    courses: [
+      "COPA",
+      "Draughtsman Civil",
+      "Electrician",
+      "Electronics Mechanic",
+      "Fitter",
+      "Machinist",
+      "Motor Vehicle Mechanic",
+      "Refrigeration and Air Conditioning",
+      "Welder"
+    ]
+  },
+
+  {
+    name: "Sri Siddhartha Industrial Training Centre",
+    city: "Kakinada",
+    address: "Jaganickpur, Kakinada, Andhra Pradesh 533002",
+    description: "Private Industrial Training Centre providing vocational technical training.",
+    phone: "9292658702",
+    website: null,
+    courses: [
+      "Electrician",
+      "Fitter"
+    ]
+  },
+
+  {
+    name: "Vijaya Industrial Training Centre",
+    city: "Kakinada",
+    address: "D.No. Vakalapudi, Opposite Surya Mahal, Kakinada, Andhra Pradesh 533001",
+    description: "Private Industrial Training Centre listed in the NCVT MIS directory.",
+    phone: "9989143189",
+    website: "http://www.iti.com",
+    courses: [
+      "Electrician",
+      "Electronics Mechanic",
+      "Fitter",
+      "Sewing Technology",
+      "Stenographer"
+    ]
+  },
+
+  {
+    name: "Minerva Industrial Training Centre",
+    city: "Kakinada",
+    address: "Kakinada District, Andhra Pradesh",
+    description: "Private Industrial Training Centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+
+  {
+    name: "Noble Industrial Training Centre",
+    city: "Kakinada",
+    address: "Kakinada District, Andhra Pradesh",
+    description: "Private Industrial Training Centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+
+  {
+    name: "SREE Private ITI",
+    city: "Kakinada",
+    address: "Kakinada District, Andhra Pradesh",
+    description: "Private Industrial Training Institute.",
+    phone: null,
+    website: null,
+    courses: [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+
+  {
+    name: "Sri Bhimeshwara Private ITI",
+    city: "Kakinada",
+    address: "Kakinada District, Andhra Pradesh",
+    description: "Private Industrial Training Institute.",
+    phone: null,
+    website: null,
+    courses: [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+
+  {
+    name: "Sri Lakshminarayana Private ITI",
+    city: "Kakinada",
+    address: "Kakinada District, Andhra Pradesh",
+    description: "Private Industrial Training Institute.",
+    phone: null,
+    website: null,
+    courses: [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+
+  {
+    name: "Sri Raja Rajeswari Industrial Training Centre",
+    city: "Kakinada",
+    address: "Kakinada District, Andhra Pradesh",
+    description: "Private Industrial Training Centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+
+  {
+    name: "Sri Venkateswara Industrial Training Centre",
+    city: "Kakinada",
+    address: "Kakinada District, Andhra Pradesh",
+    description: "Private Industrial Training Centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "ITI Training",
+      "Industrial Training"
+    ]
+  },
+
+  {
+    name: "Vikasa Kakinada",
+    city: "Kakinada",
+    address: "Collectorate, Kakinada District, Andhra Pradesh",
+    description: "Skill-development and employment training platform conducting software, apprenticeship and vocational training programs.",
+    phone: "08842352765",
+    website: "https://www.vikasajobs.com/",
+    courses: [
+      "Software Training",
+      "Apprenticeship Training",
+      "National Apprenticeship Training",
+      "Service Technician",
+      "Multi Skill Technician"
+    ]
+  },
 
 
   // =====================================================
