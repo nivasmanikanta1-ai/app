@@ -1,339 +1,16 @@
-require("dotenv").config();
-
-const express = require("express");
-const session = require("express-session");
-const pgSession = require("connect-pg-simple")(session);
-const { Pool } = require("pg");
-const bcrypt = require("bcryptjs");
-
-const app = express();
-const PORT = process.env.PORT || 10000;
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl:
-    process.env.NODE_ENV === "production"
-      ? { rejectUnauthorized: false }
-      : false
-});
-
-app.set("view engine", "ejs");
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static("public"));
-
-app.use(
-  session({
-    store: new pgSession({
-      pool,
-      tableName: "user_sessions",
-      createTableIfMissing: true
-    }),
-    secret:
-      process.env.SESSION_SECRET ||
-      "development-secret-change-this",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 7,
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production"
-    }
-  })
-);
-
-app.use((req, res, next) => {
-  res.locals.user = req.session.user || null;
-  next();
-});
-
-
-/* =========================================================
-   DATABASE
-========================================================= */
-
-async function createTables() {
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS users (
-      id SERIAL PRIMARY KEY,
-      name VARCHAR(120) NOT NULL,
-      email VARCHAR(180) UNIQUE NOT NULL,
-      password_hash TEXT NOT NULL,
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-  `);
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS centers (
-      id SERIAL PRIMARY KEY,
-      name VARCHAR(200) NOT NULL,
-      city VARCHAR(100) NOT NULL,
-      address TEXT NOT NULL,
-      description TEXT NOT NULL,
-      phone VARCHAR(40),
-      email VARCHAR(180),
-      website VARCHAR(255),
-      rating NUMERIC(2,1),
-      reviews INTEGER DEFAULT 0,
-      fee_range VARCHAR(80),
-      image_url TEXT,
-      latitude NUMERIC(10,7),
-      longitude NUMERIC(10,7),
-      facilities TEXT[],
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-  `);
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS courses (
-      id SERIAL PRIMARY KEY,
-      center_id INTEGER
-        REFERENCES centers(id)
-        ON DELETE CASCADE,
-      name VARCHAR(180) NOT NULL,
-      category VARCHAR(100) NOT NULL,
-      duration VARCHAR(80),
-      fee VARCHAR(80),
-      mode VARCHAR(50)
-    );
-  `);
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS favorites (
-      user_id INTEGER
-        REFERENCES users(id)
-        ON DELETE CASCADE,
-
-      center_id INTEGER
-        REFERENCES centers(id)
-        ON DELETE CASCADE,
-
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-      PRIMARY KEY(user_id, center_id)
-    );
-  `);
-}
-
-
-/* =========================================================
-   REAL TRAINING CENTERS
-========================================================= */
-
 const trainingCenters = [
 
-  /* =======================
-     KAKINADA
-  ======================= */
-
-  {
-    name: "NIIT",
-    city: "Kakinada",
-    address: "Ramaraopet, Kakinada, Andhra Pradesh",
-    description:
-      "Computer education and training centre offering software and technology-oriented courses.",
-    phone: "08842374929",
-    website: null,
-    courses: [
-      "C",
-      "C++",
-      "CCNA",
-      ".NET",
-      "Animation Multimedia"
-    ],
-    latitude: 16.9891,
-    longitude: 82.2475
-  },
-
-  {
-    name: "Primesoft",
-    city: "Kakinada",
-    address:
-      "Nagamalli Thota Junction, Kakinada, Andhra Pradesh",
-    description:
-      "Computer education and software training centre.",
-    phone: "08842343532",
-    website: null,
-    courses: ["Java"],
-    latitude: 16.9900,
-    longitude: 82.2450
-  },
-
-  {
-    name: "Aptech Education",
-    city: "Kakinada",
-    address:
-      "Bhanugudi, Kakinada, Andhra Pradesh",
-    description:
-      "Computer education and technology training centre.",
-    phone: null,
-    website: null,
-    courses: [
-      ".NET",
-      "Animation Multimedia",
-      "Dot Net"
-    ],
-    latitude: 16.9898,
-    longitude: 82.2470
-  },
-
-  {
-    name: "Indian Institute",
-    city: "Kakinada",
-    address:
-      "Bhanugudi Junction, Kakinada, Andhra Pradesh",
-    description:
-      "Training institute offering technology and enterprise-oriented courses.",
-    phone: "08842367111",
-    website: null,
-    courses: [
-      "SAP",
-      "SAS"
-    ],
-    latitude: 16.9897,
-    longitude: 82.2471
-  },
-
-  {
-    name: "Pace Computer Education",
-    city: "Kakinada",
-    address:
-      "Srinagar, Kakinada, Andhra Pradesh",
-    description:
-      "Computer education and software training centre.",
-    phone: "08842367985",
-    website: null,
-    courses: [
-      "J2EE",
-      "Java",
-      "SAP"
-    ],
-    latitude: 16.9890,
-    longitude: 82.2470
-  },
-
-  {
-    name: "Silicon Info Systems",
-    city: "Kakinada",
-    address:
-      "Temple Street, Kakinada, Andhra Pradesh",
-    description:
-      "Computer education and software training centre.",
-    phone: "08846598871",
-    website: null,
-    courses: [
-      "J2EE",
-      "Java",
-      ".NET",
-      "SAP"
-    ],
-    latitude: 16.9670,
-    longitude: 82.2380
-  },
-
-  {
-    name: "Arcsoft Animation",
-    city: "Kakinada",
-    address:
-      "Nagamalli Thota Junction, Kakinada, Andhra Pradesh",
-    description:
-      "Training centre focused on animation and multimedia education.",
-    phone: "08842347279",
-    website: null,
-    courses: [
-      "Animation",
-      "Multimedia"
-    ],
-    latitude: 16.9900,
-    longitude: 82.2450
-  },
-
-  {
-    name: "Ardha Technologies",
-    city: "Kakinada",
-    address:
-      "Bhanugudi Junction, Kakinada, Andhra Pradesh",
-    description:
-      "Technology training centre.",
-    phone: "08842348972",
-    website: null,
-    courses: [
-      "SAP",
-      "Tally"
-    ],
-    latitude: 16.9895,
-    longitude: 82.2470
-  },
-
-  {
-    name: "Sashi Infotech",
-    city: "Kakinada",
-    address:
-      "Sarpavaram, Kakinada, Andhra Pradesh",
-    description:
-      "Computer and software training centre.",
-    phone: "08842353030",
-    website: null,
-    courses: [
-      "Animation Multimedia",
-      "Dot Net",
-      "J2EE",
-      ".NET"
-    ],
-    latitude: 16.9800,
-    longitude: 82.2500
-  },
-
-  {
-    name: "Informatic Computer Institute",
-    city: "Kakinada",
-    address:
-      "Suryaraopeta, Kakinada, Andhra Pradesh",
-    description:
-      "Computer programming and software training centre.",
-    phone: "08842360614",
-    website: null,
-    courses: [
-      ".NET",
-      "J2EE",
-      "Java",
-      "PHP"
-    ],
-    latitude: 16.9680,
-    longitude: 82.2380
-  },
-
-  {
-    name: "5XFUTURE Software Training Institute",
-    city: "Kakinada",
-    address:
-      "68-10-35, Vidhyuth Nagar, SBI Officers Colony, Ramanayyapeta, Kakinada, Andhra Pradesh 533003",
-    description:
-      "Software training institute offering programming, full-stack, AI and data-oriented training.",
-    phone: "+919640313555",
-    website: "https://www.5xfuture.in/",
-    courses: [
-      "Python",
-      "Java",
-      "Full Stack Development",
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Data Science",
-      "Cybersecurity"
-    ],
-    latitude: 16.9891,
-    longitude: 82.2475
-  },
+  // =====================================================
+  // KAKINADA
+  // =====================================================
 
   {
     name: "iSAN Computers Education",
     city: "Kakinada",
     address:
-      "D.No. 2-161/1, 2nd Floor, Thadala Complex, Bhanugudi Junction, Kakinada, Andhra Pradesh 533003",
+      "D.No: 2-161/1, 2nd Floor, Thadala Complex, Bhanugudi Junction, Kakinada, Andhra Pradesh 533003",
     description:
-      "Computer education and software training centre.",
+      "Computer and software training institute offering technology-oriented courses.",
     phone: "+918978989444",
     website: null,
     courses: [
@@ -345,9 +22,7 @@ const trainingCenters = [
       "Java Full Stack",
       "AutoCAD",
       "Tally"
-    ],
-    latitude: 16.9896,
-    longitude: 82.2470
+    ]
   },
 
   {
@@ -362,16 +37,61 @@ const trainingCenters = [
     courses: [
       "Software Training",
       "Computer Training"
-    ],
-    latitude: 16.9898,
-    longitude: 82.2472
+    ]
+  },
+
+  {
+    name: "Tech Veracity",
+    city: "Kakinada",
+    address:
+      "2nd Floor, Sangeeth Sagar Complex, D.No: 12-5-1, opposite Titan Show Room, beside KFC, Kakinada, Andhra Pradesh 533001",
+    description:
+      "Training centre providing software and technology-oriented training.",
+    phone: "+917989872486",
+    website: null,
+    courses: [
+      "Full Stack Development",
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "SRI BABU COMPUTER TRAINING INSTITUTE",
+    city: "Kakinada",
+    address:
+      "Indrapalem Bridge, beside Friends Net and Net Centre, Indrapalem, Kakinada, Andhra Pradesh 533006",
+    description:
+      "Computer training institute providing technical education.",
+    phone: "+916303454062",
+    website: null,
+    courses: [
+      "SAP FICO",
+      "Computer Training"
+    ]
+  },
+
+  {
+    name: "Data Lineage",
+    city: "Kakinada",
+    address:
+      "1st Floor, above Shanvi Diagnostic Centre, beside Bhanu Multi Speciality Hospital, G O Colony, Kakinada, Andhra Pradesh 533003",
+    description:
+      "Technology training provider offering cloud and programming-related courses.",
+    phone: "+917989940140",
+    website: null,
+    courses: [
+      "AWS",
+      "Python",
+      "MySQL",
+      "PySpark"
+    ]
   },
 
   {
     name: "Learntact Learning Center",
     city: "Kakinada",
     address:
-      "Majestic Street, Suryanarayana Puram, Kakinada, Andhra Pradesh 533001",
+      "1st Floor, Subhamasthu Showroom, D.No: 20-11-40, Majestic Street, Suryanarayana Puram, Kakinada, Andhra Pradesh 533001",
     description:
       "Training centre offering programming and computer courses.",
     phone: "+916303114238",
@@ -383,135 +103,148 @@ const trainingCenters = [
       "C++",
       "MS Office",
       "CAD"
-    ],
-    latitude: 16.9678,
-    longitude: 82.2385
+    ]
   },
 
   {
-    name: "Data Lineage",
+    name: "BDPS COMPUTER EDUCATION",
     city: "Kakinada",
     address:
-      "G O Colony, Kakinada, Andhra Pradesh",
+      "First Floor, Sai Prameela Apartments, Nagamallithota Junction, Ramanayyapeta, Kakinada, Andhra Pradesh 533003",
     description:
-      "Technology training provider offering cloud and data-related training.",
-    phone: null,
-    website: null,
-    courses: [
-      "AWS",
-      "Python",
-      "MySQL",
-      "PySpark"
-    ],
-    latitude: 16.9900,
-    longitude: 82.2450
-  },
-
-
-  /* =======================
-     VISAKHAPATNAM
-  ======================= */
-
-  {
-    name: "NICT Computer Education",
-    city: "Visakhapatnam",
-    address:
-      "48-10-19/21, Hotel Main Street, opposite RTC Complex Road, Srinagar, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530020",
-    description:
-      "Computer education and software training centre.",
-    phone: null,
+      "Computer education and training centre.",
+    phone: "+918142668889",
     website: null,
     courses: [
       "Computer Training",
-      "Software Training"
-    ],
-    latitude: 17.7217,
-    longitude: 83.3010
+      "Tally"
+    ]
   },
 
   {
-    name: "PIONEER COMPUTER EDUCATION",
-    city: "Visakhapatnam",
+    name: "Cad Desk Kakinada",
+    city: "Kakinada",
     address:
-      "2nd Floor, 48-14-63/7, Ramatalkies Bus Stop Lane, Visakhapatnam, Andhra Pradesh 530016",
+      "D No: 2-43-3, 3rd Floor, Bhaskar Nagar, Ramanayyapeta, Kakinada, Andhra Pradesh 533003",
     description:
-      "Computer education and software training centre.",
-    phone: "+919010552255",
+      "CAD and design training centre.",
+    phone: "+917378123123",
+    website: null,
+    courses: [
+      "CAD Training"
+    ]
+  },
+
+  {
+    name: "SICE Computer Education",
+    city: "Kakinada",
+    address:
+      "214, National Highway, G O Colony, Kakinada, Andhra Pradesh 533003",
+    description:
+      "Computer education and training centre.",
+    phone: "+919912300248",
+    website: null,
+    courses: [
+      "Computer Training"
+    ]
+  },
+
+  {
+    name: "5XFUTURE Software Training Institute",
+    city: "Kakinada",
+    address:
+      "68-10-35, Vidhyuth Nagar, SBI Officers Colony, Ramanayyapeta, Kakinada, Andhra Pradesh 533003",
+    description:
+      "Software training institute offering programming, cloud and data-related courses.",
+    phone: "+919640313555",
+    website: "https://www.5xfuture.in/",
+    courses: [
+      "Python",
+      "Java",
+      "Full Stack Development",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Data Science",
+      "Cybersecurity"
+    ]
+  },
+
+  {
+    name: "KAKINADA INSTITUTE OF SOFTWARE & HARDWARE",
+    city: "Kakinada",
+    address:
+      "1-13-6, Bhanugudi Junction, Srinagar, Kakinada, Andhra Pradesh 533001",
+    description:
+      "Software and hardware training institute.",
+    phone: "+919948552767",
     website: null,
     courses: [
       "Software Training",
-      "Computer Education"
-    ],
-    latitude: 17.7118,
-    longitude: 83.3000
+      "Hardware Training"
+    ]
   },
 
   {
-    name: "Aptech Computer Education Dwarakanagar",
-    city: "Visakhapatnam",
+    name: "Tici Computer Education",
+    city: "Kakinada",
     address:
-      "Block B, Second Floor, 5th Lane, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+      "Tharesh Infotech, Lachiraju Gari Street, Surya Rao Peta, Kakinada, Andhra Pradesh 533001",
     description:
-      "Computer education and technology training centre.",
-    phone: "+919290005840",
+      "Computer education and training centre.",
+    phone: "+917032126609",
     website: null,
     courses: [
-      "Computer Education",
-      "Software Training"
-    ],
-    latitude: 17.7125,
-    longitude: 83.3005
+      "Computer Training"
+    ]
+  },
+
+
+  // =====================================================
+  // VISAKHAPATNAM
+  // =====================================================
+
+  {
+    name: "Impulse Software",
+    city: "Visakhapatnam",
+    address:
+      "Divya Shakthi Apartment, near FoodEx, North Extension, Balayya Sastri Layout, Seethammadara, Visakhapatnam, Andhra Pradesh 530013",
+    description:
+      "Software training and programming centre.",
+    phone: "+919247175823",
+    website: null,
+    courses: [
+      "Software Training",
+      "Programming"
+    ]
   },
 
   {
     name: "Srikanth Technologies",
     city: "Visakhapatnam",
     address:
-      "304, Eswar Paradise, Dwarakanagar Main Road, Visakhapatnam, Andhra Pradesh 530016",
+      "304, Dwarakanagar Road, beside State Bank of India, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
     description:
-      "Software training and programming education.",
+      "Software and programming training institute.",
     phone: "+918912541948",
     website: "https://srikanthtechnologies.com/",
     courses: [
       "Software Training",
       "Programming"
-    ],
-    latitude: 17.7140,
-    longitude: 83.3020
+    ]
   },
 
   {
-    name: "AIM Professional Computer Training Academy",
+    name: "Aeries Soft Tech Solutions",
     city: "Visakhapatnam",
     address:
-      "1st Floor, 7-16-42, Service Road, Old Gajuwaka, Visakhapatnam, Andhra Pradesh 530026",
+      "205, beside Helapuri, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
     description:
-      "Computer and software training academy.",
-    phone: "+919700029913",
+      "Software technology training centre.",
+    phone: "+919142271111",
     website: null,
     courses: [
-      "Computer Training",
       "Software Training"
-    ],
-    latitude: 17.6868,
-    longitude: 83.2147
-  },
-
-  {
-    name: "Impulse Software",
-    city: "Visakhapatnam",
-    address:
-      "Divya Shakthi Apartment, Seethammadara, Visakhapatnam, Andhra Pradesh 530013",
-    description:
-      "Software and programming training centre.",
-    phone: "+919247175823",
-    website: null,
-    courses: [
-      "Software Training",
-      "Programming"
-    ],
-    latitude: 17.7390,
-    longitude: 83.2980
+    ]
   },
 
   {
@@ -520,16 +253,14 @@ const trainingCenters = [
     address:
       "MVP Colony Sector 12, Visakhapatnam, Andhra Pradesh",
     description:
-      "Technology training provider with software and cybersecurity-oriented courses.",
+      "Technology and cybersecurity training institute.",
     phone: null,
     website: null,
     courses: [
       "Software Training",
       "Kali Linux",
       "Cybersecurity"
-    ],
-    latitude: 17.7350,
-    longitude: 83.3150
+    ]
   },
 
   {
@@ -538,1174 +269,576 @@ const trainingCenters = [
     address:
       "Dwaraka Nagar, Visakhapatnam, Andhra Pradesh",
     description:
-      "Technology training provider offering software and AI-oriented courses.",
+      "Technology training centre.",
     phone: null,
     website: null,
     courses: [
       "Software Training",
       "Artificial Intelligence"
-    ],
-    latitude: 17.7120,
-    longitude: 83.3000
+    ]
   },
 
   {
-    name: "Vedantu Learning Centre Vishakapatnam",
+    name: "IT Knowlez",
     city: "Visakhapatnam",
     address:
-      "5th Lane, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+      "47-9-36/2, 1st Floor, Mehar Plaza, 3rd Lane, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
     description:
-      "Learning centre providing academic and competitive-exam-oriented education.",
-    phone: "08971907522",
-    website: null,
-    courses: [
-      "JEE",
-      "NEET",
-      "Academic Training"
-    ],
-    latitude: 17.7125,
-    longitude: 83.3005
-  },
-
-  {
-    name: "TANASVI TECHNOLOGIES PRIVATE LIMITED",
-    city: "Visakhapatnam",
-    address:
-      "Hill No 3, IT Incubation Centre, Sunrise Startup Village, Rushikonda, Madhurawada, Visakhapatnam, Andhra Pradesh 530048",
-    description:
-      "Technology company and training/project environment.",
+      "Software and computer training centre.",
     phone: null,
     website: null,
     courses: [
-      "Software Training",
-      "Technology Training"
-    ],
-    latitude: 17.7820,
-    longitude: 83.3770
-  },
-
-  {
-    name: "XLNC.io",
-    city: "Visakhapatnam",
-    address:
-      "#504, Hawkish Business Hub, VIZAG CENTRAL, VIP Road, Siripuram, Visakhapatnam, Andhra Pradesh 530003",
-    description:
-      "Technology organisation with software and internship/project-oriented opportunities.",
-    phone: null,
-    website: null,
-    courses: [
-      "Software Training",
-      "Live Projects"
-    ],
-    latitude: 17.7210,
-    longitude: 83.3110
-  },
-
-
-  /* =======================
-     HYDERABAD
-  ======================= */
-
-  {
-    name: "TCS iON Training Partner",
-    city: "Hyderabad",
-    address:
-      "Above T T Super Market, opposite Pillar No 22, Mehdipatnam, Hyderabad, Telangana 500028",
-    description:
-      "Training partner providing computer and technology-related training.",
-    phone: "04066741772",
-    website: null,
-    courses: [
-      "Computer Training",
       "Software Training"
-    ],
-    latitude: 17.3960,
-    longitude: 78.4350
+    ]
   },
 
   {
-    name: "Cad World",
-    city: "Hyderabad",
+    name: "Comp U Learn",
+    city: "Visakhapatnam",
     address:
-      "A4 & A5, 2nd Floor, Eureka Courts, Ameerpet, Hyderabad, Telangana 500016",
+      "Flat No 402, 3rd Floor, Eswar Plaza, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
     description:
-      "Computer and CAD training institute.",
-    phone: "04066331068",
+      "Computer training centre.",
+    phone: null,
     website: null,
     courses: [
-      "AutoCAD",
-      "CAD",
       "Computer Training"
-    ],
-    latitude: 17.4375,
-    longitude: 78.4483
+    ]
   },
 
   {
-    name: "Omegacad Training Institute For Civil Engineers",
-    city: "Hyderabad",
+    name: "Edit Multimedia Centre",
+    city: "Visakhapatnam",
     address:
-      "Flat No 201, Manjeera Plaza, Ameerpet, Hyderabad, Telangana 500016",
+      "24 & 25 Arunodaya Complex, 1st Lane, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
     description:
-      "Civil engineering and CAD-focused training institute.",
-    phone: "07330950450",
+      "Multimedia and graphic design training centre.",
+    phone: null,
     website: null,
     courses: [
-      "AutoCAD",
-      "Civil Engineering Software",
-      "CAD"
-    ],
-    latitude: 17.4370,
-    longitude: 78.4480
+      "Multimedia",
+      "Graphic Design"
+    ]
   },
 
   {
-    name: "IT Professional Computer Training",
+    name: "Aptech Computer Education",
+    city: "Visakhapatnam",
+    address:
+      "House No: 58-1-293, opposite Amar Concept School, NAD Kotha Road, Visakhapatnam, Andhra Pradesh 530027",
+    description:
+      "Computer education and technology training centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "Computer Education"
+    ]
+  },
+
+  {
+    name: "TalentSprint Visakhapatnam",
+    city: "Visakhapatnam",
+    address:
+      "2nd Floor, Pavan Towers, opposite Hotel Budhil Park, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016",
+    description:
+      "Professional technology training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "Varun Technologies",
+    city: "Visakhapatnam",
+    address:
+      "Duvvada Station Road, Kurmannapalem, Visakhapatnam, Andhra Pradesh 530046",
+    description:
+      "Technology training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "Origin Engineering Academy",
+    city: "Visakhapatnam",
+    address:
+      "2nd Floor, Main Road, Gopalapatnam, Visakhapatnam, Andhra Pradesh 530027",
+    description:
+      "Engineering and technical training centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "Engineering Training"
+    ]
+  },
+
+
+  // =====================================================
+  // HYDERABAD
+  // =====================================================
+
+  {
+    name: "DURGA SOFTWARE SOLUTIONS",
     city: "Hyderabad",
     address:
-      "Ground Floor, Ansar Complex, Mehdipatnam, Hyderabad, Telangana 500028",
+      "Plot No. 202, II Floor, HUDA Maitrivanam, Ameerpet, Hyderabad, Telangana 500082",
     description:
-      "Computer and software training institute.",
-    phone: "04023514986",
+      "Software training institute offering programming and technology courses.",
+    phone: null,
+    website: null,
+    courses: [
+      "Java",
+      "J2EE",
+      ".NET",
+      "Oracle",
+      "C Language",
+      "Big Data"
+    ]
+  },
+
+  {
+    name: "QEdge Technologies",
+    city: "Hyderabad",
+    address:
+      "2nd Floor, Nagasuri Plaza, Ameerpet, Hyderabad, Telangana 500082",
+    description:
+      "Technology training institute offering software and testing courses.",
+    phone: null,
+    website: null,
+    courses: [
+      "Software Testing",
+      "Java",
+      ".NET",
+      "Mobile Applications",
+      "Big Data",
+      "Salesforce"
+    ]
+  },
+
+  {
+    name: "SV Infotech",
+    city: "Hyderabad",
+    address:
+      "Madhapur, Hyderabad, Telangana",
+    description:
+      "Computer and software training centre.",
+    phone: null,
     website: null,
     courses: [
       "Computer Training",
-      "SAP",
-      "Java"
-    ],
-    latitude: 17.3960,
-    longitude: 78.4350
-  },
-
-  {
-    name: "Datamites Data Science Courses",
-    city: "Hyderabad",
-    address:
-      "Saurabh Chharia's Academy, Mega Hills, Madhapur, Hyderabad, Telangana 500081",
-    description:
-      "Training provider focused on data science and AI-related education.",
-    phone: "06282286062",
-    website: null,
-    courses: [
-      "Data Science",
-      "Artificial Intelligence",
-      "Machine Learning"
-    ],
-    latitude: 17.4426,
-    longitude: 78.3915
-  },
-
-  {
-    name: "Teks Academy",
-    city: "Hyderabad",
-    address:
-      "Secunderabad, Telangana 500025",
-    description:
-      "Professional technology training provider offering software, cloud, data and cybersecurity courses.",
-    phone: "18001204748",
-    website: "https://teksacademy.com/",
-    courses: [
-      "Full Stack Java",
-      "Full Stack Python",
-      "Cybersecurity",
-      "Generative AI",
-      "AWS",
-      "DevOps",
-      "Data Science",
-      "Data Analytics"
-    ],
-    latitude: 17.4399,
-    longitude: 78.4983
-  },
-
-  {
-    name: "Digital Nest",
-    city: "Hyderabad",
-    address:
-      "2nd Floor, Above Karnataka Bank, Kruthika Layout, Silicon Valley Road, Madhapur, Hyderabad",
-    description:
-      "Technology training institute offering cloud, software and data-related programs.",
-    phone: null,
-    website: null,
-    courses: [
-      "AWS",
-      "Data Science",
-      "Big Data",
-      "Digital Marketing"
-    ],
-    latitude: 17.4485,
-    longitude: 78.3908
-  },
-
-  {
-    name: "Cyberaegis IT Solution",
-    city: "Hyderabad",
-    address:
-      "2nd Floor, Sri Giri Complex, beside Venkatadri Theatre, Dilsukh Nagar Main Road, Gaddiannaram, Hyderabad",
-    description:
-      "IT training provider with cybersecurity and AI-related programs.",
-    phone: null,
-    website: null,
-    courses: [
-      "Artificial Intelligence",
-      "Cybersecurity",
       "Software Training"
-    ],
-    latitude: 17.3688,
-    longitude: 78.5260
+    ]
   },
 
   {
-    name: "Sumedha Institute of Technology",
+    name: "Softcore Technologies",
     city: "Hyderabad",
     address:
-      "Fortune Signature, #301, Nizampet X Roads, Kukatpally, Hyderabad",
+      "KPHB Colony, Hyderabad, Telangana",
     description:
-      "Technology training institute.",
+      "Technology and professional training centre.",
     phone: null,
     website: null,
     courses: [
-      "Software Training",
-      "Programming"
-    ],
-    latitude: 17.5070,
-    longitude: 78.3860
+      "SAP Training",
+      "Computer Training"
+    ]
   },
 
   {
-    name: "Dream India Technologies",
+    name: "AIIT Computer Education",
     city: "Hyderabad",
     address:
-      "Flat No. 408/C, 4th Floor, Nilgiri Block, Aditya Enclave, Ameerpet, Hyderabad, Telangana 500038",
+      "Near LB Nagar Bus Stop, LB Nagar, Hyderabad, Telangana",
     description:
-      "Technology training institute offering software and professional courses.",
-    phone: "+919966891899",
-    website: "https://www.dreamindiatechnologies.com/",
-    courses: [
-      "Java Full Stack",
-      "Python Full Stack",
-      "SAP",
-      "Digital Marketing",
-      "Web Designing",
-      "Data Science"
-    ],
-    latitude: 17.4375,
-    longitude: 78.4483
-  },
-
-  {
-    name: "RK Software Solutions",
-    city: "Hyderabad",
-    address:
-      "301 & 402, 3rd Floor, opposite SR Nagar Bus Stop, Madhura Nagar, Hyderabad, Telangana 500038",
-    description:
-      "Software training and project-oriented technology education.",
+      "Computer education and hardware training centre.",
     phone: null,
     website: null,
     courses: [
-      "Software Training",
-      "Digital Marketing",
-      "Projects"
-    ],
-    latitude: 17.4410,
-    longitude: 78.4420
+      "Computer Training",
+      "Hardware Training"
+    ]
   },
 
   {
-    name: "Agasthya Solutions",
+    name: "Naarayana Technologies",
+    city: "Hyderabad",
+    address:
+      "Prashanth Complex, Dilsukh Nagar, Hyderabad, Telangana",
+    description:
+      "Computer and software training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Computer Training",
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "Cadcenterhyderabad",
     city: "Hyderabad",
     address:
       "Ameerpet, Hyderabad, Telangana",
     description:
-      "IT training provider offering cloud, DevOps and programming-oriented courses.",
+      "CAD and computer training centre.",
     phone: null,
     website: null,
     courses: [
-      "AWS",
-      "DevOps",
-      "Cloud Computing",
-      "Programming"
-    ],
-    latitude: 17.4375,
-    longitude: 78.4483
+      "CAD Training",
+      "Computer Training"
+    ]
   },
 
-
-  /* =======================
-     VIJAYAWADA
-  ======================= */
-
   {
-    name: "APEC Computer Education",
-    city: "Vijayawada",
+    name: "Mentors",
+    city: "Hyderabad",
     address:
-      "4th Floor, Vasantha Plaza, near Benz Circle, MG Road, Vijayawada, Andhra Pradesh 520010",
+      "Himayat Nagar, Hyderabad, Telangana",
     description:
-      "Computer education and software training centre.",
-    phone: "+918179624399",
-    website: "https://www.apeccomputereducation.com/",
+      "Professional software training provider.",
+    phone: null,
+    website: null,
     courses: [
-      "C",
-      "C++",
-      "Java",
-      ".NET",
-      "Python",
-      "PHP",
-      "Oracle",
-      "Web Designing",
-      "Digital Marketing",
-      "Networking"
-    ],
-    latitude: 16.5062,
-    longitude: 80.6480
+      "Software Training"
+    ]
   },
 
   {
-    name: "Nipuna Technologies",
+    name: "Greatcoder Trainings",
+    city: "Hyderabad",
+    address:
+      "Madhapur, Hyderabad, Telangana",
+    description:
+      "Software and programming training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "BI2AI Technologies Training Institute",
+    city: "Hyderabad",
+    address:
+      "Madhapur, Hyderabad, Telangana",
+    description:
+      "Technology training institute covering data, business intelligence and cybersecurity.",
+    phone: null,
+    website: null,
+    courses: [
+      "Power BI",
+      "SQL",
+      "Excel",
+      "Cybersecurity",
+      "Data Science",
+      "Artificial Intelligence",
+      "Machine Learning"
+    ]
+  },
+
+
+  // =====================================================
+  // VIJAYAWADA
+  // =====================================================
+
+  {
+    name: "BEPEC",
     city: "Vijayawada",
     address:
-      "Vijayawada, Andhra Pradesh",
+      "Moghalrajpuram, Vijayawada, Andhra Pradesh",
     description:
-      "Technology training and software education provider.",
+      "Software and professional technology training provider.",
     phone: null,
     website: null,
     courses: [
       "Software Training",
-      "Programming"
-    ],
-    latitude: 16.5062,
-    longitude: 80.6480
+      "Data Science"
+    ]
   },
 
   {
-    name: "Naresh i Technologies",
+    name: "VS Innovative Tech",
     city: "Vijayawada",
     address:
-      "Vijayawada, Andhra Pradesh",
+      "Labbipet, Vijayawada, Andhra Pradesh",
     description:
-      "Software training provider offering programming and IT courses.",
+      "Technology and SAP training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "SAP Training",
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "Zoom Technologies",
+    city: "Vijayawada",
+    address:
+      "Patamata Lanka, Vijayawada, Andhra Pradesh",
+    description:
+      "Networking and security training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Networking",
+      "Security"
+    ]
+  },
+
+  {
+    name: "Learnet Skills",
+    city: "Vijayawada",
+    address:
+      "Auto Nagar, Vijayawada, Andhra Pradesh",
+    description:
+      "Software and programming training centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "Software Training",
+      "Java"
+    ]
+  },
+
+  {
+    name: "Tally Digital Guru",
+    city: "Vijayawada",
+    address:
+      "Bhavanipuram, Vijayawada, Andhra Pradesh",
+    description:
+      "Tally and computer training centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "Tally",
+      "Computer Training"
+    ]
+  },
+
+  {
+    name: "Sree Media Agency",
+    city: "Vijayawada",
+    address:
+      "Benz Circle, Vijayawada, Andhra Pradesh",
+    description:
+      "Digital marketing training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Digital Marketing"
+    ]
+  },
+
+  {
+    name: "Topof Business Solutions",
+    city: "Vijayawada",
+    address:
+      "Benz Circle, Vijayawada, Andhra Pradesh",
+    description:
+      "Digital marketing and graphic design training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Digital Marketing",
+      "Graphic Designing"
+    ]
+  },
+
+  {
+    name: "Ultimate Technologies",
+    city: "Vijayawada",
+    address:
+      "Labbipet, Vijayawada, Andhra Pradesh",
+    description:
+      "Software and professional technology training institute.",
     phone: null,
     website: null,
     courses: [
       "Java",
       "Python",
-      "Software Training"
-    ],
-    latitude: 16.5062,
-    longitude: 80.6480
+      "C",
+      "C++",
+      "Tally",
+      "SAP FICO",
+      "Digital Marketing",
+      "Selenium Testing"
+    ]
   },
 
   {
-    name: "CADD India",
+    name: "Albright Technologies",
+    city: "Vijayawada",
+    address:
+      "Patamata, Vijayawada, Andhra Pradesh",
+    description:
+      "Hardware, networking and cloud technology training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Hardware",
+      "Networking",
+      "CCNA",
+      "MCSA",
+      "Cloud Computing",
+      "Linux",
+      "Ethical Hacking"
+    ]
+  },
+
+  {
+    name: "Genesys",
+    city: "Vijayawada",
+    address:
+      "Moghalrajpuram, Vijayawada, Andhra Pradesh",
+    description:
+      "Professional technology training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "SAS",
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "VAWE Institutes Pvt Ltd",
+    city: "Vijayawada",
+    address:
+      "Moghalrajpuram, Vijayawada, Andhra Pradesh",
+    description:
+      "Software and computer training institute.",
+    phone: null,
+    website: null,
+    courses: [
+      "Software Training",
+      "Computer Training"
+    ]
+  },
+
+  {
+    name: "TUXG Training",
+    city: "Vijayawada",
+    address:
+      "Patamata Lanka, Vijayawada, Andhra Pradesh",
+    description:
+      "Linux and software training centre.",
+    phone: null,
+    website: null,
+    courses: [
+      "Linux",
+      "PHP",
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "DACE - Digital Academy of Computer Education",
+    city: "Vijayawada",
+    address:
+      "Patamata, Vijayawada, Andhra Pradesh",
+    description:
+      "Computer, animation and graphic design training institute.",
+    phone: null,
+    website: null,
+    courses: [
+      "3D Animation",
+      "Graphic Designing",
+      "Mobile Application Development"
+    ]
+  },
+
+  {
+    name: "MAAC Animation Institutes",
     city: "Vijayawada",
     address:
       "Vijayawada, Andhra Pradesh",
     description:
-      "CAD and engineering software training provider.",
+      "Animation and multimedia training institute.",
     phone: null,
     website: null,
     courses: [
-      "AutoCAD",
-      "CAD",
-      "Engineering Software"
-    ],
-    latitude: 16.5062,
-    longitude: 80.6480
+      "Animation",
+      "Multimedia"
+    ]
+  },
+
+  {
+    name: "Naresh I Technologies",
+    city: "Vijayawada",
+    address:
+      "Patamata, Vijayawada, Andhra Pradesh 520010",
+    description:
+      "Software and programming training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "Software Training",
+      "Python",
+      "Selenium"
+    ]
+  },
+
+  {
+    name: "V Train U Institute",
+    city: "Vijayawada",
+    address:
+      "V D Puram, Bharathi Teertha Nagar, Vijayawada, Andhra Pradesh",
+    description:
+      "Professional software and technology training institute.",
+    phone: null,
+    website: null,
+    courses: [
+      "Full Stack Development",
+      "Python",
+      "Java",
+      "Web Designing",
+      "DevOps",
+      "Testing",
+      "SAP",
+      "Data Science"
+    ]
   },
 
   {
     name: "Codegnan",
     city: "Vijayawada",
     address:
-      "Vijayawada, Andhra Pradesh",
+      "Moghalrajpuram, Vijayawada, Andhra Pradesh",
     description:
-      "Programming and software development training provider.",
+      "Programming and data science training provider.",
     phone: null,
     website: null,
     courses: [
       "Python",
-      "Java",
-      "Full Stack Development",
-      "Data Science"
-    ],
-    latitude: 16.5062,
-    longitude: 80.6480
+      "Data Science",
+      "Software Training"
+    ]
+  },
+
+  {
+    name: "Canter Technologies",
+    city: "Vijayawada",
+    address:
+      "Benz Circle, Vijayawada, Andhra Pradesh",
+    description:
+      "Programming and web technology training provider.",
+    phone: null,
+    website: null,
+    courses: [
+      "C",
+      "Python",
+      "Core Java",
+      "Advanced Java",
+      "Web Technologies"
+    ]
   }
+
 ];
-
-
-/* =========================================================
-   INSERT / UPDATE CENTERS
-========================================================= */
-
-async function seedCenters() {
-
-  for (const center of trainingCenters) {
-
-    const existing = await pool.query(
-      `
-      SELECT id
-      FROM centers
-      WHERE LOWER(name) = LOWER($1)
-      AND LOWER(city) = LOWER($2)
-      LIMIT 1
-      `,
-      [center.name, center.city]
-    );
-
-    let centerId;
-
-    if (existing.rowCount) {
-
-      centerId = existing.rows[0].id;
-
-      await pool.query(
-        `
-        UPDATE centers
-        SET
-          address = $1,
-          description = $2,
-          phone = $3,
-          website = $4,
-          latitude = $5,
-          longitude = $6
-        WHERE id = $7
-        `,
-        [
-          center.address,
-          center.description,
-          center.phone,
-          center.website,
-          center.latitude,
-          center.longitude,
-          centerId
-        ]
-      );
-
-      await pool.query(
-        `DELETE FROM courses WHERE center_id = $1`,
-        [centerId]
-      );
-
-    } else {
-
-      const result = await pool.query(
-        `
-        INSERT INTO centers
-        (
-          name,
-          city,
-          address,
-          description,
-          phone,
-          website,
-          rating,
-          reviews,
-          fee_range,
-          latitude,
-          longitude,
-          facilities
-        )
-        VALUES
-        (
-          $1,$2,$3,$4,$5,$6,
-          NULL,
-          0,
-          'Contact institute for current fees',
-          $7,$8,
-          ARRAY['Training','Course Information','Map Location']
-        )
-        RETURNING id
-        `,
-        [
-          center.name,
-          center.city,
-          center.address,
-          center.description,
-          center.phone,
-          center.website,
-          center.latitude,
-          center.longitude
-        ]
-      );
-
-      centerId = result.rows[0].id;
-    }
-
-
-    for (const courseName of center.courses) {
-
-      await pool.query(
-        `
-        INSERT INTO courses
-        (
-          center_id,
-          name,
-          category,
-          duration,
-          fee,
-          mode
-        )
-        VALUES
-        (
-          $1,
-          $2,
-          $3,
-          $4,
-          $5,
-          $6
-        )
-        `,
-        [
-          centerId,
-          courseName,
-          getCategory(courseName),
-          "Contact institute",
-          "Contact institute",
-          "Contact institute"
-        ]
-      );
-    }
-  }
-}
-
-
-/* =========================================================
-   COURSE CATEGORY
-========================================================= */
-
-function getCategory(course) {
-
-  const c = course.toLowerCase();
-
-  if (
-    c.includes("python") ||
-    c.includes("java") ||
-    c === "c" ||
-    c === "c++" ||
-    c.includes("programming") ||
-    c.includes(".net") ||
-    c.includes("php")
-  ) {
-    return "Programming";
-  }
-
-  if (
-    c.includes("aws") ||
-    c.includes("azure") ||
-    c.includes("cloud")
-  ) {
-    return "Cloud";
-  }
-
-  if (
-    c.includes("devops") ||
-    c.includes("docker") ||
-    c.includes("kubernetes")
-  ) {
-    return "DevOps";
-  }
-
-  if (
-    c.includes("data science") ||
-    c.includes("data analytics") ||
-    c.includes("machine learning") ||
-    c.includes("artificial intelligence") ||
-    c.includes("generative ai")
-  ) {
-    return "Data & AI";
-  }
-
-  if (
-    c.includes("cyber")
-  ) {
-    return "Cybersecurity";
-  }
-
-  if (
-    c.includes("digital marketing")
-  ) {
-    return "Digital Marketing";
-  }
-
-  if (
-    c.includes("autocad") ||
-    c.includes("cad")
-  ) {
-    return "CAD";
-  }
-
-  if (
-    c.includes("sap") ||
-    c.includes("tally") ||
-    c.includes("oracle")
-  ) {
-    return "Enterprise & Database";
-  }
-
-  if (
-    c.includes("network")
-  ) {
-    return "Networking";
-  }
-
-  return "Other";
-}
-
-
-/* =========================================================
-   AUTH
-========================================================= */
-
-function requireAuth(req, res, next) {
-
-  if (!req.session.user) {
-    return res.redirect(
-      "/login?next=" +
-      encodeURIComponent(req.originalUrl)
-    );
-  }
-
-  next();
-}
-
-
-/* =========================================================
-   HOME
-========================================================= */
-
-app.get("/", async (req, res) => {
-
-  try {
-
-    const featured = await pool.query(`
-      SELECT *
-      FROM centers
-      ORDER BY city, name
-      LIMIT 8
-    `);
-
-    const categories = await pool.query(`
-      SELECT DISTINCT category
-      FROM courses
-      ORDER BY category
-    `);
-
-    const cities = await pool.query(`
-      SELECT DISTINCT city
-      FROM centers
-      ORDER BY city
-    `);
-
-    res.render("home", {
-      featured: featured.rows,
-      categories: categories.rows.map(x => x.category),
-      cities: cities.rows.map(x => x.city)
-    });
-
-  } catch (error) {
-
-    console.error(error);
-
-    res.status(500).render("error", {
-      message: "Unable to load training centers"
-    });
-  }
-});
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-app.get("/search", async (req, res) => {
-  try {
-    const city = (req.query.city || "").trim();
-
-    let result;
-
-    if (city) {
-      result = await pool.query(
-        `
-        SELECT *
-        FROM centers
-        WHERE LOWER(city) = LOWER($1)
-        ORDER BY name
-        `,
-        [city]
-      );
-    } else {
-      result = await pool.query(`
-        SELECT *
-        FROM centers
-        ORDER BY city, name
-      `);
-    }
-
-    const cities = await pool.query(`
-      SELECT DISTINCT city
-      FROM centers
-      ORDER BY city
-    `);
-
-    res.render("search", {
-      centers: result.rows,
-      city,
-      cities: cities.rows.map(row => row.city)
-    });
-
-  } catch (error) {
-    console.error(error);
-
-    res.status(500).render("error", {
-      message: "Unable to search training centers"
-    });
-  }
-});
-/* =========================================================
-   CENTER DETAILS
-========================================================= */
-
-app.get("/center/:id", async (req, res) => {
-
-  try {
-
-    const center = await pool.query(
-      `
-      SELECT *
-      FROM centers
-      WHERE id = $1
-      `,
-      [req.params.id]
-    );
-
-    if (!center.rowCount) {
-
-      return res.status(404).render(
-        "error",
-        {
-          message: "Training center not found"
-        }
-      );
-    }
-
-    const courses = await pool.query(
-      `
-      SELECT *
-      FROM courses
-      WHERE center_id = $1
-      ORDER BY category, name
-      `,
-      [req.params.id]
-    );
-
-    let favorite = false;
-
-    if (req.session.user) {
-
-      const f = await pool.query(
-        `
-        SELECT 1
-        FROM favorites
-        WHERE user_id = $1
-        AND center_id = $2
-        `,
-        [
-          req.session.user.id,
-          req.params.id
-        ]
-      );
-
-      favorite = Boolean(f.rowCount);
-    }
-
-    res.render("center", {
-      center: center.rows[0],
-      courses: courses.rows,
-      favorite
-    });
-
-  } catch (error) {
-
-    console.error(error);
-
-    res.status(500).render(
-      "error",
-      {
-        message: "Unable to load institute"
-      }
-    );
-  }
-});
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-app.get("/login", (req, res) => {
-
-  res.render("login", {
-    error: null,
-    next: req.query.next || "/"
-  });
-});
-
-
-app.post("/login", async (req, res) => {
-
-  try {
-
-    const {
-      email,
-      password
-    } = req.body;
-
-    const result = await pool.query(
-      `
-      SELECT *
-      FROM users
-      WHERE email = $1
-      `,
-      [email.toLowerCase()]
-    );
-
-    if (
-      !result.rowCount ||
-      !(await bcrypt.compare(
-        password,
-        result.rows[0].password_hash
-      ))
-    ) {
-
-      return res.status(401).render(
-        "login",
-        {
-          error: "Invalid email or password",
-          next: req.body.next || "/"
-        }
-      );
-    }
-
-    req.session.user = {
-      id: result.rows[0].id,
-      name: result.rows[0].name,
-      email: result.rows[0].email
-    };
-
-    res.redirect(
-      req.body.next || "/"
-    );
-
-  } catch (error) {
-
-    console.error(error);
-
-    res.status(500).render(
-      "login",
-      {
-        error: "Unable to sign in",
-        next: "/"
-      }
-    );
-  }
-});
-
-
-/* =========================================================
-   REGISTER
-========================================================= */
-
-app.get("/register", (req, res) => {
-
-  res.render("register", {
-    error: null
-  });
-});
-
-
-app.post("/register", async (req, res) => {
-
-  try {
-
-    const {
-      name,
-      email,
-      password
-    } = req.body;
-
-    if (
-      !name ||
-      !email ||
-      !password ||
-      password.length < 8
-    ) {
-
-      return res.status(400).render(
-        "register",
-        {
-          error:
-            "Enter all fields. Password must be at least 8 characters."
-        }
-      );
-    }
-
-    const hash =
-      await bcrypt.hash(password, 10);
-
-    const result = await pool.query(
-      `
-      INSERT INTO users
-      (
-        name,
-        email,
-        password_hash
-      )
-      VALUES
-      ($1,$2,$3)
-      RETURNING id,name,email
-      `,
-      [
-        name,
-        email.toLowerCase(),
-        hash
-      ]
-    );
-
-    req.session.user = result.rows[0];
-
-    res.redirect("/");
-
-  } catch (error) {
-
-    console.error(error);
-
-    res.status(400).render(
-      "register",
-      {
-        error:
-          error.code === "23505"
-            ? "Email is already registered."
-            : "Registration failed."
-      }
-    );
-  }
-});
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-app.post("/logout", (req, res) => {
-
-  req.session.destroy(() => {
-    res.redirect("/");
-  });
-});
-
-
-/* =========================================================
-   FAVORITES
-========================================================= */
-
-app.post(
-  "/favorite/:id",
-  requireAuth,
-  async (req, res) => {
-
-    try {
-
-      const existing = await pool.query(
-        `
-        SELECT 1
-        FROM favorites
-        WHERE user_id = $1
-        AND center_id = $2
-        `,
-        [
-          req.session.user.id,
-          req.params.id
-        ]
-      );
-
-      if (existing.rowCount) {
-
-        await pool.query(
-          `
-          DELETE FROM favorites
-          WHERE user_id = $1
-          AND center_id = $2
-          `,
-          [
-            req.session.user.id,
-            req.params.id
-          ]
-        );
-
-      } else {
-
-        await pool.query(
-          `
-          INSERT INTO favorites
-          (
-            user_id,
-            center_id
-          )
-          VALUES
-          ($1,$2)
-          `,
-          [
-            req.session.user.id,
-            req.params.id
-          ]
-        );
-      }
-
-      res.redirect(
-        "/center/" + req.params.id
-      );
-
-    } catch (error) {
-
-      console.error(error);
-
-      res.status(500).send(
-        "Unable to update favorite"
-      );
-    }
-  }
-);
-
-
-/* =========================================================
-   FAVORITES PAGE
-========================================================= */
-
-app.get(
-  "/favorites",
-  requireAuth,
-  async (req, res) => {
-
-    const result = await pool.query(
-      `
-      SELECT c.*
-      FROM centers c
-      JOIN favorites f
-        ON f.center_id = c.id
-      WHERE f.user_id = $1
-      ORDER BY f.created_at DESC
-      `,
-      [req.session.user.id]
-    );
-
-    res.render(
-      "favorites",
-      {
-        centers: result.rows
-      }
-    );
-  }
-);
-
-
-/* =========================================================
-   API
-========================================================= */
-
-app.get(
-  "/api/centers",
-  async (req, res) => {
-
-    const result = await pool.query(
-      `
-      SELECT
-        id,
-        name,
-        city,
-        address,
-        latitude,
-        longitude
-      FROM centers
-      WHERE latitude IS NOT NULL
-      AND longitude IS NOT NULL
-      ORDER BY city,name
-      `
-    );
-
-    res.json(result.rows);
-  }
-);
-
-
-/* =========================================================
-   HEALTH CHECK
-========================================================= */
-
-app.get(
-  "/health",
-  (req, res) => {
-
-    res.json({
-      status: "ok",
-      application: "Training Center Finder"
-    });
-  }
-);
-
-
-/* =========================================================
-   404
-========================================================= */
-
-app.use(
-  (req, res) => {
-
-    res.status(404).render(
-      "error",
-      {
-        message: "Page not found"
-      }
-    );
-  }
-);
-
-
-/* =========================================================
-   START
-========================================================= */
-
-async function startServer() {
-
-  try {
-
-    await createTables();
-
-    await seedCenters();
-
-    console.log(
-      `Loaded ${trainingCenters.length} training centers`
-    );
-
-    app.listen(
-      PORT,
-      () => {
-
-        console.log(
-          `Training Center Finder running on port ${PORT}`
-        );
-      }
-    );
-
-  } catch (error) {
-
-    console.error(
-      "Application startup failed:",
-      error
-    );
-
-    process.exit(1);
-  }
-}
-
-startServer();
