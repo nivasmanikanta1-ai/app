@@ -3,50 +3,30 @@
 <section class="detail-hero">
   <div>
     <span class="eyebrow"><%= center.city.toUpperCase() %></span>
+    <h1><%= center.name %></h1>
+    <p><%= center.description %></p>
+    <p>📍 <%= center.address %></p>
 
-```
-<h1><%= center.name %></h1>
+    <div class="actions">
+      <% if(user){ %>
+        <form action="/favorite/<%= center.id %>" method="post">
+          <button class="button">
+            <%= favorite ? '♥ Saved' : '♡ Save center' %>
+          </button>
+        </form>
+      <% } else { %>
+        <a class="button" href="/login?next=/center/<%= center.id %>">
+          Login to save
+        </a>
+      <% } %>
 
-<p><%= center.description %></p>
-
-<p>📍 <%= center.address %></p>
-
-<div class="actions">
-
-  <% if(user){ %>
-    <form action="/favorite/<%= center.id %>" method="post">
-      <button class="button">
-        <%= favorite ? '♥ Saved' : '♡ Save center' %>
-      </button>
-    </form>
-  <% } else { %>
-    <a class="button" href="/login?next=/center/<%= center.id %>">
-      Login to save
-    </a>
-  <% } %>
-
-  <a class="outline" href="#courses">
-    View courses
-  </a>
-
-  <!-- Google Maps Navigation -->
-  <a
-    class="button"
-    href="https://www.google.com/maps/dir/?api=1&destination=<%= encodeURIComponent(center.address + ', ' + center.city) %>"
-    target="_blank"
-    rel="noopener noreferrer">
-    🗺️ Get Directions
-  </a>
-
-</div>
-```
-
+      <a class="outline" href="#courses">View courses</a>
+    </div>
   </div>
 </section>
 
 <section class="panel" id="courses">
   <h2>Courses offered</h2>
-
   <div class="chips">
     <% courses.forEach(c=>{ %>
       <span><%= c.name %></span>
@@ -56,25 +36,13 @@
 
 <section class="panel">
   <h2>Institute information</h2>
-
   <p>📞 <%= center.phone || 'Not listed' %></p>
-
   <p>📍 <%= center.address %></p>
+  <p><strong>City:</strong> <%= center.city %></p>
 
-  <p>
-    <strong>City:</strong>
-    <%= center.city %>
-  </p>
-
-  <!-- Navigation -->
-
-<a
- class="button"
- href="https://www.google.com/maps/dir/?api=1&destination=<%= encodeURIComponent(center.address + ', ' + center.city) %>"
- target="_blank"
- rel="noopener noreferrer">
-🧭 Navigate to Training Center </a>
-
+  <a class="button" href="https://www.google.com/maps/dir/?api=1&destination=<%= encodeURIComponent(center.address + ', ' + center.city) %>" target="_blank" rel="noopener noreferrer">
+    🧭 Navigate to Training Center
+  </a>
 </section>
 
 <%- include('partials-foot') %>
