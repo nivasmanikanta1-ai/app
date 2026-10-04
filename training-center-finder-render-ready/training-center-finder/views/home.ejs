@@ -20,13 +20,17 @@
 <div class="grid">
 <% featured.forEach(c=>{ %>
 <article class="card">
-<img src="<%= c.image_url %>" alt="<%= c.name %>" onerror="this.onerror=null;this.src='/images/training-center-placeholder.svg';">
-<div class="card-body">
-<h3><a href="/center/<%= c.id %>"><%= c.name %></a></h3>
-<p class="muted">📍 <%= c.city %></p>
-<p><%= c.description %></p>
-<a class="outline" href="/center/<%= c.id %>">View details</a>
-</div></article>
+  <div class="institute-title-image" role="img" aria-label="<%= c.name %>">
+    <div class="institute-title-mark"><%= c.name.substring(0, 1).toUpperCase() %></div>
+    <div class="institute-title-name"><%= c.name %></div>
+  </div>
+  <div class="card-body">
+    <h3><a href="/center/<%= c.id %>"><%= c.name %></a></h3>
+    <p class="muted">📍 <%= c.city %></p>
+    <p><%= c.description %></p>
+    <a class="outline" href="/center/<%= c.id %>">View details</a>
+  </div>
+</article>
 <% }) %>
 </div></section>
 <%- include('partials-foot') %>
