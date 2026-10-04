@@ -17,10 +17,10 @@
 <div class="list">
 <% centers.forEach(c=>{ %>
 <article class="result">
-<div><h2><a href="/center/<%= c.id %>"><%= c.name %></a></h2>
-<p class="muted">📍 <%= c.address %></p><p><%= c.description %></p>
-<p><strong>Courses:</strong> <%= c.courses.join(', ') %></p>
-<a class="outline" href="/center/<%= c.id %>">View institute</a></div>
+<div>
+<h2><a href="/center/<%= c.id %>"><%= c.name %></a></h2>
+<a class="outline" href="/center/<%= c.id %>">View institute</a>
+</div>
 </article>
 <% }) %>
 <% if(!centers.length){ %><div class="empty"><h2>No matching centers</h2><p>Try another city or course.</p></div><% } %>
