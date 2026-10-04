@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8f0ff"/>
+    <stop offset="100%" stop-color="#d9fbf4"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="560" fill="url(#bg)"/>
+<rect x="275" y="145" width="350" height="290" rx="18" fill="#ffffff" stroke="#b9c8e8" stroke-width="6"/>
+<rect x="325" y="195" width="75" height="75" rx="8" fill="#dbe7ff"/>
+<rect x="500" y="195" width="75" height="75" rx="8" fill="#dbe7ff"/>
+<rect x="410" y="330" width="80" height="105" rx="8" fill="#3155d4"/>
+<path d="M235 145 L450 70 L665 145 Z" fill="#3155d4"/>
+<circle cx="450" cy="110" r="22" fill="#ffffff"/>
+<text x="450" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#23345f">Training Center</text>
+</svg>
