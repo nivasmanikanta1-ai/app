@@ -1,33 +1,42 @@
 [
   {
     "id": 1,
-    "name": "iSAN Computers Education",
-    "city": "Kakinada",
-    "address": "D.No: 2-161/1, 2nd Floor, Thadala Complex, Bhanugudi Junction, Kakinada, Andhra Pradesh 533003",
-    "description": "iSAN Computers Education is a training centre in Kakinada offering technology, computer or vocational training.",
-    "phone": "+918978989444",
-    "email": null,
-    "website": null,
-    "rating": 4.0,
-    "reviews": 0,
-    "fee_range": "Contact institute",
-    "image_url": "https://placehold.co/900x560?text=Training+Center",
-    "latitude": 16.9891,
-    "longitude": 82.2475,
-    "facilities": [
-      "Classroom Training",
-      "Course Guidance"
-    ],
-    "courses": [
-      "Python",
-      "Java",
-      "C",
-      "Artificial Intelligence",
-      "Data Science",
-      "Java Full Stack",
-      "AutoCAD",
-      "Tally"
-    ]
+"name": "Agasthya Solutions",
+  "city": "Kakinada",
+  "address": "1st Floor, Nilayam, 2-34-14, Srinaga, Chinthavari Street, opposite Mamatha Diagnostic Centre, Perrajupeta, Kakinada, Andhra Pradesh 533003",
+  "description": "Agasthya Solutions is an IT training and skill development institute in Kakinada offering practical technology and professional training.",
+  "phone": "+918019465669",
+  "email": null,
+  "website": "https://www.agasthyasolutions.com/",
+  "rating": 0,
+  "reviews": 0,
+  "fee_range": "Contact institute",
+  "image_url": "https://placehold.co/900x560?text=Agasthya+Solutions",
+  "latitude": 16.9891,
+  "longitude": 82.2475,
+  "facilities": [
+    "Classroom Training",
+    "Practical Training",
+    "Course Guidance",
+    "Placement Assistance"
+  ],
+  "courses": [
+    "AWS",
+    "DevOps",
+    "Cloud Computing",
+    "Linux",
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "Jenkins",
+    "Git",
+    "Python",
+    "Cyber Security",
+    "Data Analytics",
+    "Data Science",
+    "Java"
+  ]
+   
   },
   {
     "id": 2,
@@ -1840,40 +1849,33 @@
   },
   {
   "id": 75,
-  "name": "Agasthya Solutions",
-  "city": "Kakinada",
-  "address": "1st Floor, Nilayam, 2-34-14, Srinaga, Chinthavari Street, opposite Mamatha Diagnostic Centre, Perrajupeta, Kakinada, Andhra Pradesh 533003",
-  "description": "Agasthya Solutions is an IT training and skill development institute in Kakinada offering practical technology and professional training.",
-  "phone": "+918019465669",
-  "email": null,
-  "website": "https://www.agasthyasolutions.com/",
-  "rating": 0,
-  "reviews": 0,
-  "fee_range": "Contact institute",
-  "image_url": "https://placehold.co/900x560?text=Agasthya+Solutions",
-  "latitude": 16.9891,
-  "longitude": 82.2475,
-  "facilities": [
-    "Classroom Training",
-    "Practical Training",
-    "Course Guidance",
-    "Placement Assistance"
-  ],
-  "courses": [
-    "AWS",
-    "DevOps",
-    "Cloud Computing",
-    "Linux",
-    "Docker",
-    "Kubernetes",
-    "Terraform",
-    "Jenkins",
-    "Git",
-    "Python",
-    "Cyber Security",
-    "Data Analytics",
-    "Data Science",
-    "Java"
-  ]
+ "name": "iSAN Computers Education",
+    "city": "Kakinada",
+    "address": "D.No: 2-161/1, 2nd Floor, Thadala Complex, Bhanugudi Junction, Kakinada, Andhra Pradesh 533003",
+    "description": "iSAN Computers Education is a training centre in Kakinada offering technology, computer or vocational training.",
+    "phone": "+918978989444",
+    "email": null,
+    "website": null,
+    "rating": 4.0,
+    "reviews": 0,
+    "fee_range": "Contact institute",
+    "image_url": "https://placehold.co/900x560?text=Training+Center",
+    "latitude": 16.9891,
+    "longitude": 82.2475,
+    "facilities": [
+      "Classroom Training",
+      "Course Guidance"
+    ],
+    "courses": [
+      "Python",
+      "Java",
+      "C",
+      "Artificial Intelligence",
+      "Data Science",
+      "Java Full Stack",
+      "AutoCAD",
+      "Tally"
+    ]
+  
 }
 ]
